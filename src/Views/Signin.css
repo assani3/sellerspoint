@@ -1,0 +1,231 @@
+/* Signin.css */
+.signin-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.signin-header {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.signin-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.signin-header-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Content Section */
+.signin-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.signin-card {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #e8e8e8;
+}
+
+.signin-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Form Styles */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;  /* 👈 aligns form groups to the left */
+  text-align: left;         /* 👈 aligns text content left */
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-input {
+  padding: 0.875rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #ff6b35;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Form Options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -0.5rem;
+  width: 100%;
+}
+
+.remember-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remember-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff6b35;
+  cursor: pointer;
+}
+
+.remember-label {
+  font-size: 0.875rem;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: #ff6b35;
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  color: #e55a2b;
+  text-decoration: underline;
+}
+
+/* Sign In Button */
+.signin-button {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 9999px; /* 👈 makes the button fully rounded */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;           /* 👈 make the button full width */
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+  margin-top: 0.5rem;
+}
+
+
+.signin-button:hover {
+  background: linear-gradient(135deg, #e55a2b 0%, #e8841a 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+.signin-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(255, 107, 53, 0.3);
+}
+
+/* Footer */
+.signin-footer {
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.signin-footer p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .signin-header {
+    padding: 1rem;
+  }
+  
+  .signin-content {
+    padding: 1rem;
+  }
+  
+  .signin-card {
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .signin-title {
+    font-size: 1.5rem;
+  }
+  
+  .signin-footer {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-card {
+    padding: 1.5rem 1rem;
+    max-width: none;
+    margin: 0 0.5rem;
+  }
+  
+  .form-input {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .signin-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
