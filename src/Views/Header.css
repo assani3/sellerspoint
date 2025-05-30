@@ -312,3 +312,568 @@ ul {
 .nav-link:hover {
   color: #ff9020;
 }
+
+/* RESPONSIVE DESIGN - TABLET AND MOBILE */
+
+/* Tablet Styles (768px - 1024px) */
+/* Mobile Styles (up to 768px) */
+@media (max-width: 768px) {
+  /* Container mobile adjustments */
+  .landing-container {
+    padding: 0 15px;
+  }
+
+  /* Mobile navbar with hamburger menu */
+  .navbar {
+    position: relative;
+    padding: 8px 2%; /* Reduced padding */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px; /* Set minimum height */
+  }
+  
+  /* Hamburger menu button */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 6px; /* Reduced padding */
+    z-index: 1001;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  .hamburger-line {
+    width: 20px; /* Smaller hamburger */
+    height: 2px;
+    background-color: #333;
+    margin: 2px 0;
+    transition: 0.3s ease;
+    border-radius: 2px;
+  }
+  
+  /* Hamburger animation when menu is open */
+  .hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  
+  .hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+  
+  /* Center the logo with better positioning */
+  .nav-left {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    height: 32px; /* Smaller logo for mobile */
+    width: auto;
+  }
+  
+  /* Hide desktop nav links */
+  .nav-links {
+    display: none;
+  }
+  
+  /* Right side buttons - make them much smaller and better positioned */
+  .nav-right {
+    display: flex;
+    gap: 4px; /* Reduced gap */
+    z-index: 1001;
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-left: auto; /* Push to right */
+  }
+  
+  .nav-right .btn {
+    padding: 4px 8px; /* Much smaller padding */
+    font-size: 10px; /* Smaller font */
+    border-radius: 15px; /* Smaller border radius */
+    font-weight: 500;
+    min-height: 24px; /* Smaller minimum height */
+    max-height: 24px; /* Set max height */
+    white-space: nowrap;
+    line-height: 1.2;
+    border: 1px solid;
+  }
+  
+  /* Specific button styles for mobile */
+  .sign-in {
+    background-color: transparent;
+    border-color: #ff9020;
+    color: #ff9020;
+    min-width: 40px; /* Set minimum width */
+  }
+  
+  .sign-up {
+    background-color: #ff9020;
+    color: white;
+    border-color: #ff9020;
+    min-width: 45px; /* Set minimum width */
+  }
+
+  /* Mobile navigation overlay */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 80px 0 20px 0;
+  }
+  
+  .mobile-nav-overlay.active {
+    left: 0;
+  }
+  
+  /* Mobile navigation links */
+  .mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-nav-links li {
+    padding: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .mobile-nav-links li a,
+  .mobile-nav-links li {
+    display: block;
+    padding: 16px 24px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .mobile-nav-links li:hover,
+  .mobile-nav-links li a:hover {
+    background-color: #f8f8f8;
+    color: #ff9020;
+  }
+  
+  /* Backdrop overlay */
+  .mobile-nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .mobile-nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hero section mobile adjustments - Stack vertically with smaller image */
+  .hero {
+    flex-direction: column;
+    padding: 30px 2% 40px 2%;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .hero-left {
+    max-width: 100%;
+    order: 2; /* Put text below image on mobile */
+  }
+  
+  .hero-left h1 {
+    font-size: 26px;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+  
+  .hero-left p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .search-box {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+  
+  .search-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+  }
+  
+  .hero-right {
+    order: 1; /* Put image above text on mobile */
+    margin-bottom: 10px;
+  }
+  
+  .hero-right img {
+    max-width: 140px; /* Much smaller for mobile */
+    height: auto;
+    opacity: 0.9; /* Slightly transparent for subtle effect */
+  }
+
+  /* How it works mobile adjustments - Stack vertically */
+  .how-it-works {
+    padding: 40px 2%;
+  }
+  
+  .how-it-works h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+  
+  .steps {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .step {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 15px 30px 15px;
+  }
+  
+  .step:last-child {
+    border-bottom: none;
+  }
+  
+  .step img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .step h3 {
+    font-size: 18px;
+  }
+
+  /* Categories mobile adjustments - Grid layout */
+  .categories {
+    padding: 40px 2%;
+  }
+  
+  .categories h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  
+  .category-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .category-item {
+    width: 200px;
+    padding: 25px 20px;
+  }
+
+  /* Join sellers mobile adjustments - Stack vertically */
+  .join-sellers {
+    padding: 40px 2%;
+  }
+  
+  .join-sellers h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+  
+  .join-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .join-content img {
+    max-width: 200px;
+  }
+  
+  .join-text h3 {
+    font-size: 20px;
+  }
+  
+  .sell-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* Footer mobile adjustments - Stack vertically */
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 2%;
+    text-align: center;
+  }
+  
+  .footer-left {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-left p {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .footer-right {
+    text-align: center;
+  }
+}
+
+
+
+
+/* Small Mobile Styles (up to 480px)*/
+/* Small Mobile Styles (up to 480px)*/
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .landing-container {
+    padding: 0 10px;
+  }
+
+  /* Navbar extra small mobile */
+  .navbar {
+    padding: 6px 1.5%; /* Even smaller padding */
+    min-height: 45px;
+  }
+  
+  .logo {
+    height: 28px; /* Even smaller logo */
+  }
+  
+  /* Smaller hamburger menu */
+  .hamburger-menu {
+    padding: 4px;
+  }
+  
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+  }
+  
+  /* Even smaller buttons for very small screens */
+  .nav-right .btn {
+    padding: 3px 6px; /* Very small padding */
+    font-size: 9px; /* Very small font */
+    min-height: 20px; /* Very small height */
+    max-height: 20px;
+    border-radius: 12px;
+  }
+  
+  .sign-in {
+    min-width: 35px;
+  }
+  
+  .sign-up {
+    min-width: 38px;
+  }
+  
+  /* Smaller mobile nav overlay */
+  .mobile-nav-overlay {
+    width: 260px;
+    padding: 60px 0 20px 0;
+  }
+  
+  .mobile-nav-links li a,
+  .mobile-nav-links li {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  /* Hero extra small mobile */
+  .hero {
+    padding: 25px 1.5% 35px 1.5%;
+    gap: 20px;
+  }
+  
+  .hero-left h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  
+  .hero-left p {
+    font-size: 14px;
+  }
+  
+  .hero-right img {
+    max-width: 120px; /* Even smaller on very small screens */
+  }
+  
+  .search-box {
+    max-width: 280px;
+  }
+
+  /* Sections padding adjustments */
+  .how-it-works,
+  .categories,
+  .join-sellers {
+    padding: 30px 1%;
+  }
+  
+  .how-it-works h2,
+  .categories h2,
+  .join-sellers h2 {
+    font-size: 22px;
+  }
+
+  /* Step images smaller on very small screens */
+  .step img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Category items smaller */
+  .category-item {
+    width: 160px;
+    padding: 20px 15px;
+  }
+  
+  .category-item img {
+    height: 50px;
+    width: 50px;
+  }
+
+  /* Footer extra small */
+  .footer {
+    padding: 20px 1%;
+  }
+  
+  .footer-left img {
+    height: 25px;
+  }
+  
+  .footer-brand-name {
+    font-size: 14px;
+  }
+}
+
+/* Landscape phone orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Reduce hero padding in landscape mode */
+  .hero {
+    padding: 20px 2% 30px 2%;
+  }
+  
+  .hero-left h1 {
+    font-size: 24px;
+  }
+  
+  .hero-right img {
+    max-width: 150px;
+  }
+  
+  /* Reduce section spacing in landscape */
+  .how-it-works,
+  .categories,
+  .join-sellers {
+    padding: 25px 2%;
+  }
+}
+
+/* Ensure buttons and interactive elements are touch-friendly on mobile */
+@media (max-width: 768px) {
+  .btn,
+  .search-btn,
+  .sell-btn {
+    min-height: 44px; /* Apple's recommended touch target size */
+    cursor: pointer;
+  }
+  
+  .nav-links li {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    
+  }
+  
+  .category-item {
+    min-height: 120px;
+    cursor: pointer;
+    
+  }
+}
+
+
+/*
+@media screen and (max-width:540px) {
+    .mobile-nav-links {
+        display: none;
+    }
+    .mobile-nav-links{
+        display: block;
+    }
+}
+*/
+
+/* Add this CSS rule to hide hamburger menu on desktop and tablet */
+.hamburger-menu {
+  display: none; /* Hide by default on all screens */
+}
+
+/* Show hamburger menu only on mobile screens (768px and below) */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu on mobile */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+  }
+  
+  /* Hide desktop nav links on mobile */
+  .nav-links {
+    display: none;
+  }
+}
+
+/* Ensure desktop nav links are visible on larger screens */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex; /* Show desktop nav links on tablet and desktop */
+    gap: 30px;
+  }
+  
+  .hamburger-menu {
+    display: none; /* Explicitly hide hamburger menu on larger screens */
+  }
+  
+  /* Hide mobile navigation elements on desktop */
+  .mobile-nav-overlay,
+  .mobile-nav-backdrop {
+    display: none !important;
+  }
+}

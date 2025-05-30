@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import sellerspointlogo from '../assets/images/logo512.png'; // top left & footer
@@ -13,23 +13,95 @@ import beadworkImg from '../assets/images/beadwork.png';
 import sellerJoinImg from '../assets/images/sellerjoin.png';
 
 const Header = () => {
+  // State for mobile menu toggle
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Toggle mobile menu
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Close mobile menu when clicking on backdrop
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Handle search functionality
+  const handleSearch = () => {
+    const searchInput = document.querySelector('.search-box input');
+    const searchTerm = searchInput.value.trim();
+    if (searchTerm) {
+      // Add your search logic here
+      console.log('Searching for:', searchTerm);
+    }
+  };
+
+  // Handle Enter key press in search input
+  const handleSearchKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="landing-container">
       {/* NAVBAR */}
       <nav className="navbar">
+        {/* Hamburger Menu Button (Mobile Only) */}
+        <div 
+          className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={toggleMobileMenu}
+        >
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+          <div className="hamburger-line"></div>
+        </div>
+
+        {/* Centered Logo */}
         <div className="nav-left">
           <img src={sellerspointlogo} alt="SellersPoint Logo" className="logo" />
+          {/* Desktop Navigation Links */}
           <ul className="nav-links">
             <li><Link to="/home" className="nav-link">HOME</Link></li>            
-            <li>CRAFTS</li>
+            <li>CRAFT</li>
             <li><Link to="/product" className="nav-link">SHOP</Link></li>
             <li>CONTACT</li>
           </ul>
         </div>
+
+        {/* Right Side Buttons */}
         <div className="nav-right">
-          <button className="btn sign-in"><Link to="/signin" className="nav-link">Sign in</Link> </button>
-          <button className="btn sign-up"><Link to="/signup" className="nav-link">Sign up</Link> </button>
+          <Link to="/signin" className="nav-link">
+            <button className="btn sign-in">Sign in</button>
+          </Link>
+          <Link to="/signup" className="nav-link">
+            <button className="btn sign-up">Sign up</button>
+          </Link>
         </div>
+
+        {/* Mobile Navigation Overlay */}
+        <div className={`mobile-nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}>
+          <ul className="mobile-nav-links">
+            <li>
+              <Link to="/home" className="nav-link" onClick={closeMobileMenu}>
+                HOME
+              </Link>
+            </li>
+            <li onClick={closeMobileMenu}>CRAFTS</li>
+            <li>
+              <Link to="/product" className="nav-link" onClick={closeMobileMenu}>
+                SHOP
+              </Link>
+            </li>
+            <li onClick={closeMobileMenu}>CONTACT</li>
+          </ul>
+        </div>
+
+        {/* Mobile Navigation Backdrop */}
+        <div 
+          className={`mobile-nav-backdrop ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={closeMobileMenu}
+        ></div>
       </nav>
 
       {/* HERO */}
@@ -38,8 +110,12 @@ const Header = () => {
           <h1>Discover unique South African craft products all year round</h1>
           <p>Explore by category or find special deals!</p>
           <div className="search-box">
-            <input type="text" placeholder="What are you looking for?" />
-            <button className="btn search-btn">Search</button>
+            <input 
+              type="text" 
+              placeholder="What are you looking for?" 
+              onKeyPress={handleSearchKeyPress}
+            />
+            <button className="btn search-btn" onClick={handleSearch}>Search</button>
           </div>
         </div>
         <div className="hero-right">
@@ -73,10 +149,22 @@ const Header = () => {
       <section className="categories">
         <h2>Categories</h2>
         <div className="category-list">
-          <div className="category-item"><img src={potteryImg} alt="Pottery" /><p>Pottery</p></div>
-          <div className="category-item"><img src={woodworkImg} alt="Woodwork" /><p>Woodwork</p></div>
-          <div className="category-item"><img src={metalworkImg} alt="Metalwork" /><p>Metalwork</p></div>
-          <div className="category-item"><img src={beadworkImg} alt="Beadwork" /><p>Beadwork</p></div>
+          <div className="category-item">
+            <img src={potteryImg} alt="Pottery" />
+            <p>Pottery</p>
+          </div>
+          <div className="category-item">
+            <img src={woodworkImg} alt="Woodwork" />
+            <p>Woodwork</p>
+          </div>
+          <div className="category-item">
+            <img src={metalworkImg} alt="Metalwork" />
+            <p>Metalwork</p>
+          </div>
+          <div className="category-item">
+            <img src={beadworkImg} alt="Beadwork" />
+            <p>Beadwork</p>
+          </div>
         </div>
       </section>
 
@@ -88,7 +176,10 @@ const Header = () => {
           <div className="join-text">
             <h3>As a seller</h3>
             <p>Showcase and sell your crafts online. Start reaching customers beyond borders.</p>
-            <button className="btn sell-btn"><Link to="/signup" className="nav-link">Sell with us</Link></button>
+            {/* Fixed: Move Link outside of button for better mobile experience */}
+            <Link to="/signup" className="nav-link">
+              <button className="btn sell-btn">Sell with us</button>
+            </Link>
           </div>
         </div>
       </section>

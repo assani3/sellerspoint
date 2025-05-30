@@ -108,9 +108,9 @@ body {
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
 }
 
 .form-label {
@@ -120,22 +120,22 @@ body {
 }
 
 .form-input {
-  padding: 1rem;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 1rem !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  background-color: #ffffff !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .form-input:focus {
-  outline: none;
-  border-color: #ff8c42;
-  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1);
+  outline: none !important;
+  border-color: #ff8c42 !important;
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1) !important;
 }
 
 .form-input::placeholder {
-  color: #adb5bd;
+  color: #adb5bd !important;
 }
 
 .create-account-btn {
@@ -249,7 +249,7 @@ body {
   }
   
   .form-input {
-    padding: 0.875rem;
+    padding: 0.875rem !important;
   }
   
   .create-account-btn {

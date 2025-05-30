@@ -1,7 +1,7 @@
-/* Signin.css */
+/* Signin.css - Complete Clean Version */
 .signin-container {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #f9fafb;
   display: flex;
   flex-direction: column;
 }
@@ -40,12 +40,12 @@
 
 .signin-card {
   background: white;
-  border-radius: 12px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 400px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #f3f4f6;
 }
 
 .signin-title {
@@ -53,16 +53,16 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #111827;
 }
 
 /* Form Styles */
 .signin-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  align-items: flex-start;  /* 👈 aligns form groups to the left */
-  text-align: left;         /* 👈 aligns text content left */
+  gap: 1.25rem;
+  align-items: flex-start;
+  text-align: left;
   width: 100%;
 }
 
@@ -75,28 +75,42 @@
 
 .form-label {
   font-size: 0.875rem;
-  font-weight: 500;
-  color: #555;
+  font-weight: 600;
+  color: #374151 !important;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
 
-.form-input {
-  padding: 0.875rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #fafafa;
-  transition: all 0.2s ease;
-  outline: none;
+/* Use more specific selector to override Checkout.css */
+.signin-form .form-group .form-input {
+  padding: 0.875rem 1rem !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  background-color: #f9fafb !important;
+  background: #f9fafb !important;
+  color: #374151 !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.form-input:focus {
-  border-color: #ff6b35;
-  background-color: white;
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+.signin-form .form-group .form-input:focus {
+  border-color: #ff8c42 !important;
+  background-color: white !important;
+  background: white !important;
+  box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1) !important;
 }
 
-.form-input::placeholder {
-  color: #9ca3af;
+.signin-form .form-group .form-input::placeholder {
+  color: #9ca3af !important;
+  font-weight: 400 !important;
+}
+
+.form-input[type="password"] {
+  font-family: inherit;
+  letter-spacing: 1px;
 }
 
 /* Form Options */
@@ -117,21 +131,22 @@
 .remember-checkbox {
   width: 18px;
   height: 18px;
-  accent-color: #ff6b35;
+  accent-color: #ff8c42;
   cursor: pointer;
 }
 
 .remember-label {
   font-size: 0.875rem;
-  color: #555;
+  color: #374151;
   cursor: pointer;
   user-select: none;
+  font-weight: 500;
 }
 
 .forgot-password-link {
   background: none;
   border: none;
-  color: #ff6b35;
+  color: #ff8c42;
   font-size: 0.875rem;
   cursor: pointer;
   text-decoration: none;
@@ -141,37 +156,35 @@
 }
 
 .forgot-password-link:hover {
-  color: #e55a2b;
+  color: #f97316;
   text-decoration: underline;
 }
 
 /* Sign In Button */
 .signin-button {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  background: #ff8c42;
   color: white;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 9999px; /* 👈 makes the button fully rounded */
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  width: 100%;           /* 👈 make the button full width */
+  width: 100%;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
   margin-top: 0.5rem;
 }
 
-
 .signin-button:hover {
-  background: linear-gradient(135deg, #e55a2b 0%, #e8841a 100%);
+  background: #f97316;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
 }
 
 .signin-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.25);
 }
 
 /* Footer */
@@ -188,6 +201,18 @@
   color: #666;
 }
 
+/* Focus indicators for better accessibility */
+.remember-checkbox:focus {
+  outline: 2px solid #ff8c42;
+  outline-offset: 2px;
+}
+
+.forgot-password-link:focus {
+  outline: 2px solid #ff8c42;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* Responsive Design */
 @media (max-width: 640px) {
   .signin-header {
@@ -200,7 +225,7 @@
   
   .signin-card {
     padding: 2rem 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
   }
   
   .signin-title {
@@ -227,5 +252,12 @@
   .signin-button {
     padding: 0.875rem 1.5rem;
     font-size: 0.9rem;
+  }
+  
+  .form-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    text-align: center;
   }
 }

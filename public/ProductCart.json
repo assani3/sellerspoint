@@ -1,0 +1,53 @@
+
+
+
+[
+    {
+        "id": 1,
+        "name": "Zulu Beaded Necklace",
+        "price": 200,
+        "image": "https://example.com/zulu-necklace.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Zulu Beaded Necklace",
+        "price": 250,
+        "image": "https://example.com/zulu-necklace.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Zulu Beaded Necklace",
+        "price": 290,
+        "image": "https://example.com/zulu-necklace.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Zulu Beaded Necklace",
+        "price": 200,
+        "image": "https://example.com/zulu-necklace.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Xhosa Clay Pot",
+        "price": 300,
+        "image": "https://example.com/xhosa-pot.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Xhosa Clay Pot",
+        "price": 200,
+        "image": "https://example.com/xhosa-pot.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Xhosa Clay Pot",
+        "price": 200,
+        "image": "https://example.com/xhosa-pot.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Ndebele Painted Canvas",
+        "price": 200,
+        "image": "https://example.com/ndebele-canvas.jpg"
+    }
+]

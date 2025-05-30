@@ -33,7 +33,7 @@ const Signup = () => {
         <div className="header-content">
           <div className="logo-section">
             <img src={sellerspointlogo} alt="SellerPoint Logo" className="logo" />
-            <span className="brand-name">Buyers Hub</span>
+            <span className="brand-name">SellersPoint</span>
           </div>
           <Link to="/signin" className="login-link">Login</Link>
         </div>

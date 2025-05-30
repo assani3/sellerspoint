@@ -10,6 +10,15 @@ import Product from './Views/Product';
 import Signin from './Views/Signin';
 import Signup from './Views/Signup';
 
+
+
+//new checkout page
+import Checkout from './Views/Checkout';
+
+//new SellersDashboar page
+import SellersDashboard from './Views/SellersDashboard';
+
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +31,15 @@ function App() {
           <Route path="/product" element={<Product/>}/>
           <Route path="/signin" element={<Signin/>}/>
           <Route path="/signup" element={<Signup/>}/>
+
+          
+
+         {/* new test Checkout */}
+          <Route path="/checkout" element={<Checkout />} />  
+
+          {/* new test sellersdashboard */}
+          <Route path="/sellersdashboard" element={<SellersDashboard />} />       
+
           {/* Add more routes as needed */}
         </Routes>
       </Router>
