@@ -18,6 +18,14 @@ import Checkout from './Views/Checkout';
 //new SellersDashboar page
 import SellersDashboard from './Views/SellersDashboard';
 
+import AddProduct from './Views/AddProduct';
+
+import ProductDetails from './Views/ProductDetails';
+
+import AdminPage from './Views/AdminPage';
+
+import BuyerOrder from './Views/BuyerOrder';
+
 
 function App() {
   return (
@@ -38,7 +46,20 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />  
 
           {/* new test sellersdashboard */}
-          <Route path="/sellersdashboard" element={<SellersDashboard />} />       
+          <Route path="/sellersdashboard" element={<SellersDashboard />} />  
+
+            {/* new test addproduct */}
+          <Route path="/addproduct" element={<AddProduct/>}/> 
+
+           {/* new test ProductDetails */}
+          <Route path="/productdetails" element={<ProductDetails/>}/> 
+
+          {/* new test adminPage */}
+          <Route path="/adminpage" element={<AdminPage/>}/> 
+
+          {/* new test adminPage */}
+          <Route path="/buyerorder" element={<BuyerOrder/>}/> 
+
 
           {/* Add more routes as needed */}
         </Routes>

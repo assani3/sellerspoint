@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Signin.css';
 import sellerspointlogo from '../assets/images/logo512.png';
+import { apiFetch } from '../utils/apiFetch';
+
 
 const Signin = () => {
+
+  //this lil MF keeps the user logged in even if the page reloads
+  //notice how I called it in the import above real nigga shit
+  useEffect(() => {
+  const savedUser = JSON.parse(localStorage.getItem('sellerspoint_user'));
+  if (savedUser) {
+    sessionStorage.setItem('sellerspoint_user', JSON.stringify(savedUser));
+    window.location.href = '/products'; // make sure this matches your route
+  }
+}, []);
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -17,11 +30,69 @@ const Signin = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle sign in logic here
-    console.log('Sign in attempted with:', formData);
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await /*fetch*/ apiFetch ('https://sellerspoint.infinityfreeapp.com/api/signin.php', {
+      method: 'POST',
+      credentials: 'include', // ✅ Crucial for sessions
+      //headers: {
+       // 'Content-Type': 'application/json'
+      //},
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password
+      })
+    });
+
+    const contentType = response.headers.get("content-type");
+
+    if (contentType && contentType.indexOf("application/json") !== -1) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        const userData = {
+          userId: result.user_id,
+          username: result.username,
+          role: result.role
+        };
+
+        if (formData.remember) {
+          localStorage.setItem('sellerspoint_user', JSON.stringify(userData));
+        } else {
+          sessionStorage.setItem('sellerspoint_user', JSON.stringify(userData));
+        }
+
+        alert("Signed in successfully");
+        console.log("User info:", result);
+
+        localStorage.setItem('seller_id', response.seller_id); // Still here ✅
+
+        if (result.role === 'admin') {
+          window.location.href = '/adminpage';
+        } else if (result.role === 'seller') {
+          window.location.href = '/sellersdashboard';
+        } else {
+          window.location.href = '/product';
+        }
+
+      } else {
+        alert(result.error || "Signin failed");
+      }
+    } else {
+      const text = await response.text();
+      console.error("Expected JSON, got:", text);
+      alert("Server error - check PHP script output");
+    }
+
+  } catch (error) {
+    console.error("Signin error:", error);
+    alert("Could not connect to server");
+  }
+};
+
+
 
   const handleForgotPassword = () => {
     // Handle forgot password logic here

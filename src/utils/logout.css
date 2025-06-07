@@ -1,0 +1,236 @@
+/* Logout Button Styling - SellersPoint Theme - Orange Version */
+
+/* Primary Logout Button */
+.logout-btn {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff7720 100%) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 25px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  outline: none !important;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #ff7720 0%, #e6650a 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(255, 140, 66, 0.4) !important;
+}
+
+.logout-btn:active {
+  transform: translateY(0px) !important;
+  box-shadow: 0 2px 8px rgba(255, 140, 66, 0.3) !important;
+}
+
+/* Secondary/Outline Logout Button */
+.logout-btn-secondary {
+  background: transparent !important;
+  color: #ff8c42 !important;
+  border: 2px solid #ff8c42 !important;
+  padding: 10px 22px !important;
+  border-radius: 25px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  outline: none !important;
+}
+
+.logout-btn-secondary:hover {
+  background: #ff8c42 !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.3) !important;
+}
+
+.logout-btn-secondary:active {
+  transform: translateY(0px) !important;
+}
+
+/* Small/Compact Logout Button */
+.logout-btn-small {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff7720 100%) !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(255, 140, 66, 0.3) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  outline: none !important;
+}
+
+.logout-btn-small:hover {
+  background: linear-gradient(135deg, #ff7720 0%, #e6650a 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.4) !important;
+}
+
+/* Header/Navigation Logout Button */
+.nav-logout-btn {
+  background: transparent !important;
+  color: #666 !important;
+  border: none !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  outline: none !important;
+}
+
+.nav-logout-btn:hover {
+  background: rgba(255, 140, 66, 0.1) !important;
+  color: #ff8c42 !important;
+}
+
+/* Icon styling for logout buttons */
+.logout-btn-icon {
+  width: 16px !important;
+  height: 16px !important;
+  fill: currentColor !important;
+}
+
+/* Dropdown menu logout option */
+.dropdown-logout {
+  background: transparent !important;
+  color: #ff6b42 !important;
+  border: none !important;
+  padding: 12px 20px !important;
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border-radius: 6px !important;
+  margin: 4px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.dropdown-logout:hover {
+  background: rgba(255, 107, 66, 0.1) !important;
+  color: #e6650a !important;
+}
+
+/* Confirmation dialog styling */
+.logout-confirm-dialog {
+  background: white !important;
+  border-radius: 15px !important;
+  padding: 30px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  max-width: 400px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.logout-confirm-title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 15px !important;
+}
+
+.logout-confirm-message {
+  font-size: 16px !important;
+  color: #666 !important;
+  margin-bottom: 25px !important;
+  line-height: 1.5 !important;
+}
+
+.logout-confirm-buttons {
+  display: flex !important;
+  gap: 15px !important;
+  justify-content: center !important;
+}
+
+.logout-confirm-yes {
+  background: linear-gradient(135deg, #ff8c42 0%, #ff7720 100%) !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 25px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.logout-confirm-yes:hover {
+  background: linear-gradient(135deg, #ff7720 0%, #e6650a 100%) !important;
+  transform: translateY(-1px) !important;
+}
+
+.logout-confirm-no {
+  background: transparent !important;
+  color: #ff8c42 !important;
+  border: 2px solid #ff8c42 !important;
+  padding: 10px 22px !important;
+  border-radius: 25px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.logout-confirm-no:hover {
+  background: #ff8c42 !important;
+  color: white !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .logout-btn,
+  .logout-btn-secondary {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+  }
+  
+  .logout-btn-small {
+    padding: 6px 14px !important;
+    font-size: 11px !important;
+  }
+  
+  .logout-confirm-dialog {
+    padding: 25px !important;
+    margin: 20px !important;
+  }
+  
+  .logout-confirm-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-btn,
+  .logout-btn-secondary {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+  }
+}

@@ -4,9 +4,11 @@ import sellerspointlogo from '../assets/images/logo512.png';
 import signupIllustration from '../assets/images/signupillustration.png';
 import './Signup.css';
 
+import { apiFetch } from '../utils/apiFetch';
+
 const Signup = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -20,11 +22,55 @@ const Signup = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your signup logic here
-    console.log('Signup data:', formData);
-  };
+  
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  try {
+    const response = await /*fetch*/ apiFetch ('https://sellerspoint.infinityfreeapp.com/api/signup.php', {
+      method: 'POST',
+      //headers: {
+        //'Content-Type': 'application/json',
+        //'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/113 Safari/537.36'
+      //},
+      body: JSON.stringify({
+        username: formData.username, // ✅ correct key
+        email: formData.email,
+        password: formData.password
+      })
+    });
+
+    const contentType = response.headers.get("content-type");
+
+    if (contentType && contentType.includes("application/json")) {
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Account created successfully");
+        window.location.href = "/signin";
+      } else {
+        alert(result.error || "Signup failed");
+      }
+    } else {
+      const text = await response.text();
+      console.error("Non-JSON response:", text);
+      alert("Server error - please check if the PHP script is returning valid JSON");
+    }
+
+  } catch (error) {
+    console.error("Signup error:", error);
+    alert("Error connecting to server");
+  }
+};
+
+
+
 
   return (
     <div className="signup-container">
@@ -52,7 +98,7 @@ const Signup = () => {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="username"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleInputChange}

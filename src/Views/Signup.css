@@ -116,7 +116,7 @@ body {
 .form-label {
   font-size: 1rem;
   font-weight: 500;
-  color: #333;
+  color: #333 !important;
 }
 
 .form-input {
@@ -126,6 +126,7 @@ body {
   font-size: 1rem !important;
   background-color: #ffffff !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  color: #333 !important;
 }
 
 .form-input:focus {
